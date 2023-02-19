@@ -1,9 +1,11 @@
 import { utils } from 'ethers';
 import { Contract } from '@ethersproject/contracts';
-import { abi } from './abi';
+import manifest from 'tmp/contracts/manifest.json';
 
-const AbiInterface = new utils.Interface(abi);
-export const contractAddress = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string;
+const { WavePortal } = manifest.contracts;
+
+const AbiInterface = new utils.Interface(WavePortal.abi);
+export const contractAddress = WavePortal.address;
 
 export const contractCall = {
   abi: AbiInterface,

@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  frontend:
+    command: yarn dev
+    ports:
+      - "3000:3000"
+    build: .
+    env_file:
+      - .env.local
+    volumes:
+      - ./src:/app/src
+      - contracts:/app/src/tmp/contracts
+
+volumes:
+  contracts:
+    name: contracts

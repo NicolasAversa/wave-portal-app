@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "clean": "npm install --package-lock-only && npm ci"
+    "codecrumbs": "codecrumbs -d src/ -e src/index.js"
   },
   "dependencies": {
     "@usedapp/core": "0",
@@ -26,6 +26,7 @@
     "eslint-plugin-jsx-a11y": "6",
     "eslint-plugin-react": "7",
     "eslint-plugin-react-hooks": "4",
+    "eslint-plugin-storybook": "^0.5.12",
     "postcss": "8",
     "tailwindcss": "3",
     "typescript": "4"

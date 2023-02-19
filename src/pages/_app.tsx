@@ -1,17 +1,15 @@
 import 'styles/globals.css';
 import type { AppProps } from 'next/app';
-import {
-  DAppProvider, ChainId, Localhost, Rinkeby,
-} from '@usedapp/core';
+import { DAppProvider, ChainId } from '@usedapp/core';
 
 const MyApp = ({ Component, pageProps }: AppProps) => (
   <DAppProvider
     config={{
-      readOnlyChainId: ChainId.Rinkeby,
+      readOnlyChainId: ChainId.Hardhat,
       readOnlyUrls: {
         [ChainId.Rinkeby]: `https://rinkeby.infura.io/v3/${process.env.NEXT_PUBLIC_INFURA_API_KEY}`,
+        [ChainId.Hardhat]: 'http://localhost:8545',
       },
-      networks: [Localhost, Rinkeby],
     }}
   >
     <Component {...pageProps} />
